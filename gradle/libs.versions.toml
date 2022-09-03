@@ -4,14 +4,15 @@ minecraft = "1.19.2"
 quilt_loader = "0.17.4"
 
 qsl = "3.0.0-beta.14"
-groovyduvet = "1.0.2"
+groovyduvet = "1.1.0"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
 quilt_loader = { module = "org.quiltmc:quilt-loader", version.ref = "quilt_loader" }
 
 qsl = { module = "org.quiltmc:qsl", version.ref = "qsl" }
-groovyduvet = { module = "io.github.lukebemish.groovyduvet:groovyduvet", version.ref = "groovyduvet" }
+groovyduvet_all = { module = "io.github.lukebemish.groovyduvet:groovyduvet", version.ref = "groovyduvet" }
+groovyduvet_groovy = { module = "io.github.lukebemish.groovyduvet:groovyduvet-groovy", version.ref = "groovyduvet" }
 
 [plugins]
 quilt_loom = { id = "org.quiltmc.loom", version = "0.12.+" }
