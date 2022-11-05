@@ -5,7 +5,7 @@ plugins {
 }
 
 archivesBaseName = project.archives_base_name
-version = project.version
+version = "${project.version}+${libs.versions.minecraft.get()}"
 group = project.maven_group
 
 repositories {
@@ -37,7 +37,7 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", version
+	inputs.property 'version', version
 
 	filesMatching('quilt.mod.json') {
 		expand "version": version
@@ -45,7 +45,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.encoding = "UTF-8"
+	it.options.encoding = 'UTF-8'
 	// Minecraft 1.18 (1.18-pre2) upwards uses Java 17.
 	it.options.release = 17
 }
@@ -64,10 +64,9 @@ java {
 	// withJavadocJar()
 }
 
-// If you plan to use a different file for the license, don't forget to change the file name here!
 jar {
-	from("LICENSE") {
-		rename { "${it}_${archivesBaseName}" }
+	filesMatching('LICENSE') {
+		rename '^(LICENSE.*?)(\\..*)?$', "\$1_${archivesBaseName}\$2"
 	}
 }
 

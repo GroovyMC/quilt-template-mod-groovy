@@ -1,9 +1,9 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
 minecraft = "1.19.2"
-quilt_loader = "0.17.4"
+quilt_loader = "0.17.5"
 
-qsl = "3.0.0-beta.14"
+qsl = "3.0.0-beta.20"
 groovyduvet = "1.1.0"
 
 [libraries]
@@ -15,4 +15,4 @@ groovyduvet_all = { module = "io.github.lukebemish.groovyduvet:groovyduvet", ver
 groovyduvet_groovy = { module = "io.github.lukebemish.groovyduvet:groovyduvet-groovy", version.ref = "groovyduvet" }
 
 [plugins]
-quilt_loom = { id = "org.quiltmc.loom", version = "0.12.+" }
+quilt_loom = { id = "org.quiltmc.loom", version = "1.0.+" }
