@@ -1,6 +1,6 @@
-# Quilt Template Mod
+# Quilt Template Mod Groovy
 
-The official Quilt template Mod. You can use it as a template for your own mods!
+A modification of the official Quilt Template Mod to work with GroovyDuvet. You can use it as a template for your own mods!
 
 ## Usage
 
@@ -23,6 +23,6 @@ In order to use this mod as a template:
 
 ## License
 
-This template on the QuiltMC GitHub is licensed under the [Creative Common Zero v1.0 license](./LICENSE-TEMPLATE.md).
+This template on the GroovyMC GitHub, as well as the original Quilt Template Mod on the QuiltMC GitHub, are licensed under the [Creative Common Zero v1.0 license](./LICENSE-TEMPLATE.md).
 
-Mods created with this template are not automatically licensed under the CC0, and are not required to give any kind of credit back to QuiltMC for this template.
+Mods created with this template are not automatically licensed under the CC0, and are not required to give any kind of credit back to GroovyMC or QuiltMC for this template.
