@@ -9,6 +9,10 @@ pluginManagement {
 			name = 'Fabric'
 			url = 'https://maven.fabricmc.net/'
 		}
+		// Used for MDG
+		maven {
+			url "https://maven.moddinginquisition.org/releases"
+		}
 		gradlePluginPortal()
 	}
 }

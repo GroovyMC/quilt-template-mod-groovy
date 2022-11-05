@@ -2,9 +2,15 @@ plugins {
 	id 'maven-publish'
 	id 'groovy'
 	alias libs.plugins.quilt.loom
+	alias libs.plugins.mdg
 }
 
-archivesBaseName = project.archives_base_name
+modsDotGroovy {
+	dslVersion = libs.versions.mdg.dsl.get()
+	platform 'quilt'
+}
+
+archivesBaseName = project.mod_id
 version = "${project.version}+${libs.versions.minecraft.get()}"
 group = project.maven_group
 
