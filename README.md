@@ -1,6 +1,6 @@
 # Quilt Template Mod Groovy
 
-A modification of the official Quilt Template Mod to work with GroovyDuvet. You can use it as a template for your own mods!
+A modification of the official Quilt template mod to work with GroovyDuvet. You can use it as a template for your own mods!
 
 ## Usage
 
