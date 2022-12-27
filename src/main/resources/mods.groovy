@@ -15,18 +15,9 @@ ModsDotGroovy.make {
 
         dependencies {
             minecraft = this.minecraftVersionRange
-
-            mod('groovyduvet') {
-                versionRange = ">=${this.libs.versions.groovyduvet}"
-            }
-
-            mod('quilt_base') {
-                versionRange = ">=${this.libs.versions.qsl}"
-            }
-
-            quiltLoader {
-                versionRange = ">=${this.quiltLoaderVersion}"
-            }
+            groovyduvet = ">=${this.libs.versions.groovyduvet}"
+            quilt_base = ">=${this.libs.versions.qsl}"
+            quiltLoader = ">=${this.quiltLoaderVersion}"
         }
 
         entrypoints {

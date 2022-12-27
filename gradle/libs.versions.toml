@@ -1,12 +1,12 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
-minecraft = "1.19.2"
-quilt_loader = "0.17.5"
+minecraft = "1.19.3"
+quilt_loader = "0.18.1-beta.25"
 
-qsl = "3.0.0-beta.20"
-groovyduvet = "1.1.0"
+qsl = "4.0.0-beta.3"
+groovyduvet = "2.0.0"
 
-mdg_dsl = "1.1.3"
+mdg_dsl = "1.2.1"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
