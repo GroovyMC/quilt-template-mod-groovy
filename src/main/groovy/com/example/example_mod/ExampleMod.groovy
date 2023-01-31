@@ -9,5 +9,5 @@ final Logger LOGGER = LoggerFactory.getLogger("Example Mod")
 // entrypoint, or refer to a field in a script or class or static method in a class; entrypoints can be closures, and
 // will be cast to the proper interface). If you use IntelliJ, there should be a context action to get IDE support for
 // the unknown property.
-LOGGER.info("Hello Quilt world from {}!", arg0.metadata().name())
+LOGGER.info("Hello Quilt world from ${arg0.metadata().name()}!")
 
