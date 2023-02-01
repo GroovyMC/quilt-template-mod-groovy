@@ -4,8 +4,8 @@ minecraft = "1.19.3"
 quilt_loader = "0.18.1-beta.25"
 
 qsl = "4.0.0-beta.3"
-groovyduvet = "2.0.1"
-groovy = "4.0.6"
+groovyduvet = "2.0.3"
+groovy = "4.0.8"
 
 mdg_dsl = "1.2.1"
 
