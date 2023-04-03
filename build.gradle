@@ -1,8 +1,22 @@
+buildscript {
+	dependencies {
+		classpath libs.tinyremapper
+	}
+}
+
 plugins {
 	id 'maven-publish'
 	id 'groovy'
 	alias libs.plugins.quilt.loom
 	alias libs.plugins.mdg
+}
+
+configurations.configureEach {
+	resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+		if (details.requested.module.with {it?.name == 'tiny-remapper' && it?.group == 'net.fabricmc'}) {
+			details.useTarget libs.tinyremapper
+		}
+	}
 }
 
 modsDotGroovy {
@@ -21,7 +35,12 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven {
+		name = "TheModdingInquisition"
 		url "https://maven.moddinginquisition.org/releases"
+	}
+	maven {
+		name = "Luke's Maven"
+		url = 'https://maven.lukebemish.dev/releases'
 	}
 }
 
