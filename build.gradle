@@ -11,6 +11,13 @@ plugins {
 	alias libs.plugins.mdg
 }
 
+loom {
+	// Turn off TinyRemapper log spam
+	runs.each {
+		it.vmArgs '-Dnet.fabricmc.tinyremapper.knownindybsm=org/codehaus/groovy/vmplugin/v8/IndyInterface'
+	}
+}
+
 configurations.configureEach {
 	resolutionStrategy.eachDependency { DependencyResolveDetails details ->
 		if (details.requested.module.with {it?.name == 'tiny-remapper' && it?.group == 'net.fabricmc'}) {
