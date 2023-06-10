@@ -11,6 +11,8 @@ plugins {
 	alias libs.plugins.mdg
 }
 
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
 loom {
 	// Turn off TinyRemapper log spam
 	runs.each {
@@ -31,7 +33,7 @@ modsDotGroovy {
 	platform 'quilt'
 }
 
-archivesBaseName = project.mod_id
+base.archivesName = project.mod_id
 version = "${project.version}+${libs.versions.minecraft.get()}"
 group = project.maven_group
 
@@ -42,13 +44,22 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven {
-		name = "TheModdingInquisition"
-		url "https://maven.moddinginquisition.org/releases"
+		name = 'TheModdingInquisition'
+		url 'https://maven.moddinginquisition.org/releases'
 	}
+	// Currently used for a TinyRemapper fork that does not create log spam with groovy
 	maven {
-		name = "Luke's Maven"
+		name = 'Luke\'s Maven'
 		url = 'https://maven.lukebemish.dev/releases'
 	}
+}
+
+// Used for depending on groovyduvet-core; groovyduvet-core should be present at runtime but not exposed to
+// dependencies as a runtime dependency
+configurations {
+	localImplementation
+	runtimeClasspath.extendsFrom localImplementation
+	compileOnly.extendsFrom localImplementation
 }
 
 // All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
@@ -63,17 +74,16 @@ dependencies {
 
 	modImplementation libs.qsl
 
-	compileOnly libs.groovy
 	// GroovyDuvet allows for loading groovy mods, and has wrappers around minecraft and QSL code for ease of development.
 	modImplementation libs.groovyduvet.all
-	runtimeOnly libs.groovyduvet.groovy
+	localImplementation libs.groovyduvet.core
 }
 
 processResources {
 	inputs.property 'version', version
 
 	filesMatching('quilt.mod.json') {
-		expand "version": version
+		expand 'version': version
 	}
 }
 
@@ -100,7 +110,7 @@ java {
 // If you plan to use a different file for the license, don't forget to change the file name here!
 jar {
 	from('LICENSE') {
-		rename { "${it}_${archivesBaseName}" }
+		rename { "${it}_${base.archivesName}" }
 	}
 }
 

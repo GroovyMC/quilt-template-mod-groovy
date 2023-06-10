@@ -26,6 +26,14 @@ pluginManagement {
 			name = "TheModdingInquisition"
 			url = 'https://maven.moddinginquisition.org/releases'
 		}
-		gradlePluginPortal()
+		gradlePluginPortal {
+			content {
+				excludeModule 'net.fabricmc', 'tiny-remapper'
+			}
+		}
 	}
+}
+
+plugins {
+    id "org.gradle.toolchains.foojay-resolver-convention" version "0.5.0"
 }
